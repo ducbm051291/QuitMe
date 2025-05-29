@@ -12,6 +12,7 @@ import KeyboardShortcuts
 
 @Model
 class IgnoredItem {
+
     @Attribute(.unique) var id: String
     var createdAt: Date
     
@@ -22,6 +23,7 @@ class IgnoredItem {
 }
 
 struct MenuItem: Hashable, Identifiable {
+
     let id: String
     let item: NSRunningApplication
     var checked: Bool
@@ -34,6 +36,7 @@ struct MenuItem: Hashable, Identifiable {
 }
 
 final class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
+
     @Published var menuItems: [MenuItem] = []
     @Published var checkedItems: [MenuItem: Bool] = [:]
     private var fetchTimer: Timer?

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PopoverView: View {
+
     @Environment(\.openWindow) private var openWindow
     @Environment(\.dismiss) private var dismiss
     
@@ -47,6 +48,7 @@ struct PopoverView: View {
 }
 
 struct PopoverButton: View {
+
     let icon: String
     let title: String
     let action: () -> Void
@@ -77,8 +79,6 @@ struct PopoverButton: View {
     }
 }
 
-struct PopoverView_Previews: PreviewProvider {
-    static var previews: some View {
-        PopoverView()
-    }
+#Preview {
+    PopoverView()
 }

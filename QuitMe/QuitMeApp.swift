@@ -10,6 +10,7 @@ import SwiftData
 
 @main
 struct QuitMeApp: App {
+
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     var body: some Scene {

@@ -10,6 +10,7 @@ import SwiftUI
 import SwiftData
 
 struct AppMenuView: View {
+
     @EnvironmentObject var appDelegate: AppDelegate
     @State private var selectAll = false
     @State private var showSettings = false
@@ -48,7 +49,7 @@ struct AppMenuView: View {
             HStack {
                 Image(systemName: "power")
                     .font(.system(size: 14, weight: .semibold))
-                Text("Quit Selected")
+                Text("quit_selected")
                     .font(.system(size: 14, weight: .semibold))
             }
             .padding(.horizontal, 16)
@@ -82,9 +83,9 @@ struct AppMenuView: View {
     
     private var selectAllToggle: some View {
         HStack {
-            Text("Select All Applications")
+            Text("select_all_applications")
                 .font(.system(size: 14, weight: .medium))
-                Spacer()
+            Spacer()
             Toggle("", isOn: $selectAll)
                 .toggleStyle(
                     SwitchToggleStyle(tint: .accentColor)
@@ -119,11 +120,12 @@ struct AppMenuView: View {
         for menuItem in appDelegate.selectedItems {
             menuItem.item.terminate()
         }
-        selectAll.toggle()
+        selectAll = false
     }
 }
 
 struct MenuItemRow: View {
+
     @EnvironmentObject var appDelegate: AppDelegate
     @Environment(\.modelContext) private var modelContext
     let menuItem: MenuItem
@@ -146,7 +148,7 @@ struct MenuItemRow: View {
                     .foregroundColor(.secondary)
             }
             
-            Text(menuItem.item.localizedName ?? "Unknown")
+            Text(menuItem.item.localizedName ?? NSLocalizedString("unknown", comment: "Fallback for unknown app name"))
                 .lineLimit(1)
                 .truncationMode(.tail)
             
@@ -161,7 +163,7 @@ struct MenuItemRow: View {
                         .clipShape(Circle())
                 }
                 .buttonStyle(PlainButtonStyle())
-                .help("Ignore this app")
+                .help(NSLocalizedString("ignore_this_app_help", comment: "Help text for ignore app button"))
                 
                 Button(action: { menuItem.item.terminate() }) {
                     Image(systemName: "xmark.circle")
@@ -171,7 +173,7 @@ struct MenuItemRow: View {
                         .clipShape(Circle())
                 }
                 .buttonStyle(PlainButtonStyle())
-                .help("Terminate this app")
+                .help(NSLocalizedString("terminate_this_app_help", comment: "Help text for terminate app button"))
             }
         }
         .padding(.vertical, 4)
@@ -184,6 +186,11 @@ struct MenuItemRow: View {
         }
         let ignoredItem = IgnoredItem(id: menuItem.id)
         modelContext.insert(ignoredItem)
+        do {
+            try modelContext.save()
+        } catch {
+            print("Error saving context after ignoring item: \(error.localizedDescription)")
+        }
     }
 }
 

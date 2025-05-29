@@ -1,0 +1,29 @@
+//
+//  Localizable.strings (Vietnamese)
+//  QuitMe
+//
+//  Created by Bui Minh Duc on 28/5/25.
+//
+
+/* Common */
+"unknown" = "Không rõ";
+
+/* AppMenuView */
+"quit_selected" = "Thoát mục đã chọn";
+"select_all_applications" = "Chọn tất cả ứng dụng";
+"ignore_this_app_help" = "Bỏ qua ứng dụng này";
+"terminate_this_app_help" = "Đóng ứng dụng này";
+
+/* SettingsView */
+"preferences" = "Tùy chọn";
+"ignored_apps" = "Ứng dụng bị bỏ qua";
+"no_ignored_apps" = "Không có ứng dụng nào bị bỏ qua";
+"shortcuts" = "Phím tắt";
+"quit_all" = "Thoát tất cả";
+"force_quit_all" = "Buộc thoát tất cả";
+"launch_at_login" = "Khởi chạy khi đăng nhập";
+"remove_ignored_item_help" = "Xóa mục bị bỏ qua";
+
+/* HelpView */
+"quitme_version" = "QuitMe phiên bản %@";
+"contact_me" = "Liên hệ với tôi";

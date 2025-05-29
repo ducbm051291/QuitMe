@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6330C9692DE7157800D64474 /* Localizable.strings in Sources */ = {isa = PBXBuildFile; fileRef = 6330C9682DE7157800D64474 /* Localizable.strings */; };
 		EA38FE7C2C0121C400EF5375 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA38FE7B2C0121C400EF5375 /* AppDelegate.swift */; };
 		EA3A63172C040449000BDB93 /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = EA3A63162C040449000BDB93 /* KeyboardShortcuts */; };
 		EA3A63192C04046F000BDB93 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3A63182C04046F000BDB93 /* Constants.swift */; };
@@ -41,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6330C9672DE7157800D64474 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6330C96A2DE7157900D64474 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EA38FE7B2C0121C400EF5375 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA3A63182C04046F000BDB93 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EA3A631C2C0407E9000BDB93 /* PopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverView.swift; sourceTree = "<group>"; };
@@ -128,6 +131,7 @@
 		EA6CAF892C00CC5900856697 /* QuitMe */ = {
 			isa = PBXGroup;
 			children = (
+				6330C9682DE7157800D64474 /* Localizable.strings */,
 				EA3A631B2C040512000BDB93 /* Delegates */,
 				EA3A631A2C040502000BDB93 /* Views */,
 				EA6CAF8A2C00CC5900856697 /* QuitMeApp.swift */,
@@ -254,6 +258,7 @@
 			knownRegions = (
 				en,
 				Base,
+				vi,
 			);
 			mainGroup = EA6CAF7E2C00CC5900856697;
 			packageReferences = (
@@ -303,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA3A631D2C0407E9000BDB93 /* PopoverView.swift in Sources */,
+				6330C9692DE7157800D64474 /* Localizable.strings in Sources */,
 				EA3A63192C04046F000BDB93 /* Constants.swift in Sources */,
 				EA38FE7C2C0121C400EF5375 /* AppDelegate.swift in Sources */,
 				EA62EE982C0670A600CDEF4C /* HelpView.swift in Sources */,
@@ -343,6 +349,18 @@
 			targetProxy = EA6CAFA32C00CC5A00856697 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6330C9682DE7157800D64474 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6330C9672DE7157800D64474 /* en */,
+				6330C96A2DE7157900D64474 /* vi */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		EA6CAFAA2C00CC5A00856697 /* Debug */ = {
@@ -475,7 +493,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"QuitMe/Preview Content\"";
-				DEVELOPMENT_TEAM = 66Z4557953;
+				DEVELOPMENT_TEAM = AWDF94BXSW;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -488,7 +506,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0.3;
-				PRODUCT_BUNDLE_IDENTIFIER = com.burakssen.com.QuitMe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ducbm.quitme;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -507,7 +525,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"QuitMe/Preview Content\"";
-				DEVELOPMENT_TEAM = 66Z4557953;
+				DEVELOPMENT_TEAM = AWDF94BXSW;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -520,7 +538,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0.3;
-				PRODUCT_BUNDLE_IDENTIFIER = com.burakssen.com.QuitMe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ducbm.quitme;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

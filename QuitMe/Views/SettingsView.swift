@@ -11,6 +11,7 @@ import LaunchAtLogin
 import KeyboardShortcuts
 
 struct PreferencesView: View {
+
     @EnvironmentObject var appDelegate: AppDelegate
     @Environment(\.modelContext) var modelContext
     @Query(sort: \IgnoredItem.id) var ignoredItems: [IgnoredItem]
@@ -23,17 +24,16 @@ struct PreferencesView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
-            Text("Preferences")
+            Text("preferences")
                 .font(.title2)
                 .fontWeight(.bold)
             
-            // Scrollable Ignored Apps Section
-            Text("Ignored Apps")
+            Text("ignored_apps")
                 .font(.headline)
             ScrollView {
                 IgnoredAppsSection(ignoredItemList: ignoredItemList, ignoredItems: ignoredItems, modelContext: modelContext)
             }
-            .frame(maxHeight: 500) // Adjust height as needed
+            .frame(maxHeight: 500) 
             
             Divider()
             
@@ -42,7 +42,7 @@ struct PreferencesView: View {
             Divider()
             
             LaunchAtLogin.Toggle {
-                Text("Launch at Login")
+                Text("launch_at_login")
                     .font(.subheadline)
             }
         }
@@ -53,20 +53,19 @@ struct PreferencesView: View {
 }
 
 struct IgnoredAppsSection: View {
+
     let ignoredItemList: [MenuItem]
     let ignoredItems: [IgnoredItem]
     let modelContext: ModelContext
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            
-            
             ForEach(ignoredItemList) { ignoredItem in
                 IgnoredItemRow(ignoredItem: ignoredItem, ignoredItems: ignoredItems, modelContext: modelContext)
             }
             
             if ignoredItemList.isEmpty {
-                Text("No ignored apps")
+                Text("no_ignored_apps")
                     .foregroundColor(.secondary)
                     .italic()
             }
@@ -75,21 +74,23 @@ struct IgnoredAppsSection: View {
 }
 
 struct ShortcutsSection: View {
+
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("Shortcuts")
+            Text("shortcuts")
                 .font(.headline)
             
-            KeyboardShortcuts.Recorder("Quit All", name: .quitMode)
+            KeyboardShortcuts.Recorder(NSLocalizedString("quit_all", comment: "Shortcut label for Quit All"), name: .quitMode)
                 .padding(.vertical, 4)
             
-            KeyboardShortcuts.Recorder("Force Quit All", name: .forceQuitMode)
+            KeyboardShortcuts.Recorder(NSLocalizedString("force_quit_all", comment: "Shortcut label for Force Quit All"), name: .forceQuitMode)
                 .padding(.vertical, 4)
         }
     }
 }
 
 struct IgnoredItemRow: View {
+
     let ignoredItem: MenuItem
     let ignoredItems: [IgnoredItem]
     let modelContext: ModelContext
@@ -109,7 +110,7 @@ struct IgnoredItemRow: View {
                     .foregroundColor(.secondary)
             }
             
-            Text(ignoredItem.item.localizedName ?? "Unknown")
+            Text(ignoredItem.item.localizedName ?? NSLocalizedString("unknown", comment: "Fallback for unknown app name"))
                 .font(.system(size: 14))
                 .lineLimit(1)
                 .truncationMode(.tail)
@@ -125,7 +126,7 @@ struct IgnoredItemRow: View {
             }
             .padding(.trailing, 15)
             .buttonStyle(PlainButtonStyle())
-            .help("Remove Ignored Item")
+            .help(NSLocalizedString("remove_ignored_item_help", comment: "Help text for remove ignored item button"))
         }
         .padding(.vertical, 4)
     }
@@ -142,10 +143,8 @@ struct IgnoredItemRow: View {
     }
 }
 
-struct PreferencesView_Previews: PreviewProvider {
-    static var previews: some View {
-        PreferencesView()
-            .environmentObject(AppDelegate())
-            .modelContainer(for: IgnoredItem.self)
-    }
+#Preview {
+    PreferencesView()
+        .environmentObject(AppDelegate())
+        .modelContainer(for: IgnoredItem.self)
 }

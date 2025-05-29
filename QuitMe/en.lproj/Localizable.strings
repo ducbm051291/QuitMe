@@ -1,0 +1,29 @@
+//
+//  Localizable.strings (English)
+//  QuitMe
+//
+//  Created by Bui Minh Duc on 28/5/25.
+//
+
+/* Common */
+"unknown" = "Unknown";
+
+/* AppMenuView */
+"quit_selected" = "Quit Selected";
+"select_all_applications" = "Select All Applications";
+"ignore_this_app_help" = "Ignore this app";
+"terminate_this_app_help" = "Terminate this app";
+
+/* SettingsView */
+"preferences" = "Preferences";
+"ignored_apps" = "Ignored Apps";
+"no_ignored_apps" = "No ignored apps";
+"shortcuts" = "Shortcuts";
+"quit_all" = "Quit All";
+"force_quit_all" = "Force Quit All";
+"launch_at_login" = "Launch at Login";
+"remove_ignored_item_help" = "Remove Ignored Item";
+
+/* HelpView */
+"quitme_version" = "QuitMe v%@";
+"contact_me" = "Contact Me";
